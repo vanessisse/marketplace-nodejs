@@ -12,7 +12,6 @@ const findUserByIdController = async (req, res) => {
 
     }catch (err){
         if(err.kind == 'ObjectID'){
-            console.log(err.kind == 'ObjectId');
             return res.status(400).send({message: 'O ID informado está incorreto. Tente novamente.'});
         }
 
@@ -62,13 +61,16 @@ const updateUserController =  async (req, res) => {
 
 const removeUserController = async (req, res) => {
     try{
-        const deleteUser = await userService.removeUserService(req.params.id);
+        const deletedUser = await userService.removeUserService(req.params.id);
 
-        if(deleteUser.deletedCount > 0){
-            res.status(200).send({ message: 'Sucesso! Usuário excluído.'});
-        }else{
-            res.status(404).send({ message: 'Usuário não encontrado. Tente novamente.'});
-        }
+        console.log(deletedUser);
+        res.status(200).send({ message: 'Sucesso! Usuário excluído.'});
+
+        // if(deleteUser.deletedCount > 0){
+        //     res.status(200).send({ message: 'Sucesso! Usuário excluído.'});
+        // }else{
+        //     res.status(404).send({ message: 'Usuário não encontrado. Tente novamente.'});
+        // }
 
     }catch (err){
         console.log(`Erro: ${err.message}`)
