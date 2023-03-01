@@ -8,7 +8,7 @@ router.get('/findAll', usuarioController.findAllUsersCrontoller);
 
 // Rotas POST
 router.post('/create', usuarioController.createUserController);
-router.post('/addAdress/:id', usuarioController.addUserAddressController);
+router.post('/addAddress/:id', usuarioController.addUserAddressController);
 router.post('/addFavProduct/:id', usuarioController.addUserFavProductController);
 
 // Rotas PUT
@@ -16,7 +16,7 @@ router.put('/update/:id', usuarioController.updateUserController);
 
 // Rotas DELETE
 router.delete('/remove/:id', usuarioController.removeUserController);
-router.delete('/removeAdress', usuarioController.addUserAddressController);
+router.delete('/removeAddress', usuarioController.removeUserAddressControler);
 router.delete('/removeFavProduct', usuarioController.removeUserFavProductController);
 
 module.exports = router;
