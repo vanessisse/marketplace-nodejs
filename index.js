@@ -16,7 +16,7 @@ app.use(express.json());
 connectToDatabase();
 
 // Chamando as rotas do usuário
-app.use('/usuario', usuario)
+app.use('/usuario', usuario);
 
 app.get('/', (req, res) => {
     res.send({
