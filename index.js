@@ -3,8 +3,10 @@ const express = require('express');
 // Conexão com o banco
 const connectToDatabase = require('./src/database/database');
 
-// Rota de usuário
+// Rotas de usuário
 const usuario = require('./src/router/usuario.router');
+// Rota de autenticação
+const auth = require('./src/router/auth.router');
 
 const app = express();
 
@@ -17,6 +19,8 @@ connectToDatabase();
 
 // Chamando as rotas do usuário
 app.use('/usuario', usuario);
+// Chamando a rota de autenticação
+app.use('/auth', auth);
 
 app.get('/', (req, res) => {
     res.send({
