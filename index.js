@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 
 // Conexão com o banco
 const connectToDatabase = require('./src/database/database');
