@@ -44,7 +44,7 @@ const updateProductController = async (req, res) => {
 
 const deleteProductController = async (req, res) => {
     try{
-        return res.send(await produtoService.deleteProducService(req.params.id));
+        return res.send(await produtoService.deleteProductService(req.params.id));
     }catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });
