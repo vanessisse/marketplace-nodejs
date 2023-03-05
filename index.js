@@ -10,6 +10,8 @@ const usuario = require('./src/router/usuario.router');
 const auth = require('./src/router/auth.router');
 // Rotas de produto
 const produto = require('./src/router/produto.router');
+// Rotas de categoria
+const categoria = require('./src/router/categoria.router');
 
 const app = express();
 
@@ -26,6 +28,8 @@ app.use('/usuario', usuario);
 app.use('/auth', auth);
 // Chamando as rotas de produto
 app.use('/produto', produto);
+// Chamando as rotas de categoria
+app.use('/categoria', categoria);
 
 app.get('/', (req, res) => {
     res.send({
