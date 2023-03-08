@@ -25,7 +25,7 @@ const createCarrinhoController = async (req, res) => {
             userId: req.userId,
         }
 
-        res.status(201).send(await carrinhoService.createCarrinhoService(req.params.id, corpo));
+        res.status(201).send(await carrinhoService.createCarrinhoService(corpo));
     }catch (err) {
         console.log(`Erro: ${err.message}`)
         res.status(500).send({ message: 'Erro! Tente novamente.' });
