@@ -83,7 +83,7 @@ const addUserAddressController = async (req, res) => {
         const endereco = await userService.addUserAddressService(req.params.id, req.body);
 
         console.log(endereco);
-        
+
         if(endereco.value == null){
             res.status(400).send({ message: 'Algo deu errado no endereço. Tente novamente.' });
         }else{
@@ -119,18 +119,18 @@ const removeUserAddressControler = async (req, res) => {
     }
 };
 
-const addUserFavProductController = async (re, res) => {
+const addUserFavProductController = async (req, res) => {
     try {
-
+        res.status(201).send(await userService.addUserFavProductService(req.params.id, req.body));
     } catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });
     }
 };
 
-const removeUserFavProductController = async (re, res) => {
+const removeUserFavProductController = async (req, res) => {
     try {
-
+        res.status(201).send(await userService.removeUserFavProductService(req.params.id, req.body));
     } catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });
