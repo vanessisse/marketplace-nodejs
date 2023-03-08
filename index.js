@@ -14,6 +14,8 @@ const produto = require('./src/router/produto.router');
 const categoria = require('./src/router/categoria.router');
 // Rotas de carrinho
 const carrinho = require('./src/router/carrinho.router');
+// Rotas de pedido
+const pedido = require("./src/router/pedido.router");
 
 const app = express();
 
@@ -34,6 +36,8 @@ app.use('/produto', produto);
 app.use('/categoria', categoria);
 // Chamando as rotas de carrinho
 app.use('/carrinho', carrinho);
+// Chamando as rotas de pedido
+app.use("/pedido", pedido);
 
 app.get('/', (req, res) => {
     res.send({
