@@ -22,7 +22,7 @@ const createProductController = async (req, res) => {
     try{
         const corpo = {
             ...req.body,
-            userId: req.userId,
+            userId: req.userId
         }
 
         return res.send(await produtoService.createProductService(corpo));
