@@ -17,7 +17,7 @@ const deletePedidoService = async (id) => {
 };
 
 const updateStatusPedidoService = (id) => {
-  return Pedido.findByIdAndUpdate({_id: id}, {$set: {concluido: true}});
+  return Pedido.findByIdAndUpdate({ _id: id}, {$set: { concluido: true }});
 }
 
 module.exports = {
