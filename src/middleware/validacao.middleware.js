@@ -1,18 +1,18 @@
 const validaUsuario = (req, res, next) => {
     // Verificação individual de erros e tratamento
-    if(!req.body.nome){
+    if (!req.body.nome) {
         return res.status(400).send({ message: "O campo 'nome' deve ser preenchido" });
     }
-    if(!req.body.email){
+    if (!req.body.email) {
         return res.status(400).send({ message: "O campo 'e-mail' deve ser preenchido" });
     }
-    if(!req.body.senha){
+    if (!req.body.senha) {
         return res.status(400).send({ message: "O campo 'senha' deve ser preenchido" });
     }
-    if(!req.body.imagem){
+    if (!req.body.imagem) {
         return res.status(400).send({ message: "O campo 'imagem' deve ser preenchido" });
     }
-    if(!req.body.admin){
+    if (!req.body.admin) {
         return res.status(400).send({ message: "O campo 'admin' deve ser preenchido" });
     }
     return next();
@@ -22,36 +22,36 @@ const validaProduto = (req, res, next) => {
     // Variável para acumulação de erros
     let erros = [];
 
-    if(!req.body.nome){
+    if (!req.body.nome) {
         erros.push('nome');
     }
-    if(!req.body.descricao){
+    if (!req.body.descricao) {
         erros.push('nome');
     }
-    if(!req.body.precoUnitario){
+    if (!req.body.precoUnitario) {
         erros.push('precoUnitario');
     }
-    if(!req.body.imagem){
+    if (!req.body.imagem) {
         erros.push('imagem');
     }
-    if(!req.body.codigoBarra){
+    if (!req.body.codigoBarra) {
         erros.push('codigoBarra');
     }
     // Verificação de quantidade de erros e tratamento
-    if(erros.length == 0){
+    if (erros.length == 0) {
         return next();
-    }else{
-        if(erros.length > 1){
+    } else {
+        if (erros.length > 1) {
             return res.status(400).send({ message: `Os campos ${erros} devem ser preenchidos.` });
-        }else{
+        } else {
             return res.status(400).send({ message: `O campo ${erros} deve ser preenchido.` });
         }
     }
 }
 
 const validaCategoria = (req, res, next) => {
-    if(!req.body.nome){
-        return res.status(400).send({ message: "O campo 'nome' deve ser preenchido"});
+    if (!req.body.nome) {
+        return res.status(400).send({ message: "O campo 'nome' deve ser preenchido" });
     }
     return next();
 }
@@ -60,22 +60,22 @@ const validaPedido = (req, res, next) => {
     // Variável para acumulação de erros
     let erros = [];
 
-    if(!req.body.precoTotal){
+    if (!req.body.precoTotal) {
         erros.push('precoTotal');
     }
-    if(!req.body.frete){
+    if (!req.body.frete) {
         erros.push('frete');
     }
-    if(!req.body.concluido){
+    if (req.body.concluido == undefined) {
         erros.push('concluido');
     }
     // Verificação de quantidade de erros e tratamento
-    if(erros.length == 0){
+    if (erros.length == 0) {
         return next();
-    }else{
-        if(erros.length > 1){
+    } else {
+        if (erros.length > 1) {
             return res.status(400).send({ message: `Os campos ${erros} devem ser preenchidos.` });
-        }else{
+        } else {
             return res.status(400).send({ message: `O campo ${erros} deve ser preenchido.` });
         }
     }
@@ -85,19 +85,19 @@ const validaCarrinho = (req, res, next) => {
     // Variável para acumulação de erros
     let erros = [];
 
-    if(!req.body.precoTotal){
+    if (!req.body.precoTotal) {
         erros.push('precoTotal');
     }
-    if(!req.body.frete){
+    if (!req.body.frete) {
         erros.push('frete');
     }
     // Verificação de quantidade de erros e tratamento
-    if(erros.length == 0){
+    if (erros.length == 0) {
         return next();
-    }else{
-        if(erros.length > 1){
+    } else {
+        if (erros.length > 1) {
             return res.status(400).send({ message: `Os campos ${erros} devem ser preenchidos.` });
-        }else{
+        } else {
             return res.status(400).send({ message: `O campo ${erros} deve ser preenchido.` });
         }
     }
