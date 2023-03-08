@@ -25,7 +25,7 @@ const createProductController = async (req, res) => {
             userId: req.userId
         }
 
-        return res.send(await produtoService.createProductService(corpo));
+        res.status(201).send(await produtoService.createProductService(corpo));
     }catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });
