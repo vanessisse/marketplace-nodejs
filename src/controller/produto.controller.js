@@ -11,7 +11,7 @@ const findProductByIdController = async (req, res) => {
 
 const findAllProductController = async (req, res) => {
     try{
-        return res.send(await produtoService.findAllProductService());
+        return res.send(await produtoService.findAllProductService(req.query.limit, req.query.offset));
     }catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });

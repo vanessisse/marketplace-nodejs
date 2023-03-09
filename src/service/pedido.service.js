@@ -4,8 +4,8 @@ const findPedidoByIdService = async (id) => {
   return await Pedido.findById(id);
 };
 
-const findPedidoService = async () => {
-  return await Pedido.find();
+const findPedidoService = async (limit, offset) => {
+  return await Pedido.find().limit(limit).skip(offset);
 };
 
 const createPedidoService = async (body) => {

@@ -11,7 +11,7 @@ const findPedidoByIdController = async (req, res) => {
 
 const findAllPedidoController = async (req, res) => {
   try{
-    res.send(await pedidoService.findPedidoService());
+    res.send(await pedidoService.findPedidoService(req.query.limit, req.query.offset));
 }catch (err) {
     console.log(`Erro: ${err.message}`)
     return res.status(500).send({ message: 'Erro! Tente novamente.' });
@@ -23,9 +23,8 @@ const createPedidoController = async (req, res) => {
     const corpo = {
       ...req.body,
       userId: req.userId,
-      createdAt: new Date(),
     }
-    res.send(await pedidoService.createPedidoService(corpo));
+    res.status(201).send(await pedidoService.createPedidoService(corpo));
 }catch (err) {
     console.log(`Erro: ${err.message}`)
     return res.status(500).send({ message: 'Erro! Tente novamente.' });
@@ -34,13 +33,7 @@ const createPedidoController = async (req, res) => {
 
 const deletePedidoController = async (req, res) => {
   try{
-    const del = await pedidoService.deletePedidoService(req.params.id);
-
-    if(del != null ){
-      res.status(200).send({ message: 'Pedido removido com sucesso!' });
-    }else{
-      res.status(404).send({ message: 'Pedido não encontrado!' });
-    }
+    res.status(200).send(await pedidoService.deletePedidoService(req.params.id));
 }catch (err) {
     console.log(`Erro: ${err.message}`)
     return res.status(500).send({ message: 'Erro! Tente novamente.' });
