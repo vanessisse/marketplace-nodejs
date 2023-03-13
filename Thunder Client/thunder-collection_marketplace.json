@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "marketplace",
-    "dateExported": "2023-03-09T06:07:52.880Z",
+    "dateExported": "2023-03-13T23:17:26.632Z",
     "version": "1.1",
     "folders": [
         {
@@ -170,17 +170,21 @@
             "colId": "d131af5c-0fa8-42ee-981c-eab5ae53e19b",
             "containerId": "0465e7e8-3495-4f66-9fee-596e3d31b609",
             "name": "addAdress",
-            "url": "{{BaseURL}}{{Port}}/usuario/addAddress/63ffddd30661e21228f5131e",
+            "url": "{{BaseURL}}{{Port}}/usuario/addAddress/63fff860a3015e116343813b",
             "method": "POST",
             "sortNum": 80000,
             "created": "2023-03-01T19:26:16.328Z",
-            "modified": "2023-03-01T23:28:26.418Z",
+            "modified": "2023-03-13T02:38:14.515Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"rua\": \"avenida do sol\",\n  \"numero\": 2,\n  \"cep\": \"12345-678\"\n}",
+                "raw": "[\n  {\n  \"rua\": \"avenida do sol\",\n  \"numero\": 2,\n  \"cep\": \"12345-678\"\n  },\n  {\n  \"rua\": \"avenida dos lagos\",\n  \"numero\": 18,\n  \"cep\": \"42561-873\"\n}\n]",
                 "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{Token}}"
             },
             "tests": []
         },
@@ -193,13 +197,17 @@
             "method": "DELETE",
             "sortNum": 90000,
             "created": "2023-03-01T19:38:34.503Z",
-            "modified": "2023-03-02T01:18:06.723Z",
+            "modified": "2023-03-13T02:41:40.352Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"id\": \"63ffa017366a34a31c10b0a7\",\n  \"addressId\": \"63ffdbc73adff3ae81383053\"\n}",
+                "raw": "{\n  \"id\": \"63fff860a3015e116343813b\",\n  \"addressId\": \"640e8c967a8749f73a255f40\"\n}",
                 "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{Token}}"
             },
             "tests": []
         },
@@ -456,16 +464,16 @@
             "colId": "d131af5c-0fa8-42ee-981c-eab5ae53e19b",
             "containerId": "26a43be7-bbb0-41c1-b9b0-f9d7448fb3e2",
             "name": "addCategoria",
-            "url": "{{BaseURL}}{{Port}}/produto/addCategoria/64040e4cf73ed3c7131cb305",
+            "url": "{{BaseURL}}{{Port}}/produto/addCategoria/64096fb1a5618c827df61a35",
             "method": "POST",
             "sortNum": 250000,
             "created": "2023-03-05T03:32:15.294Z",
-            "modified": "2023-03-05T03:39:08.135Z",
+            "modified": "2023-03-13T03:07:08.016Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"_id\": \"64040795e8fbf0aeec5b8395\"\n  \n}",
+                "raw": "{\n  \"_id\": \"6407ea5d162d4646fc7d630d\"\n}",
                 "form": []
             },
             "auth": {
@@ -506,12 +514,12 @@
             "method": "POST",
             "sortNum": 270000,
             "created": "2023-03-08T01:18:13.543Z",
-            "modified": "2023-03-08T19:10:57.449Z",
+            "modified": "2023-03-13T03:17:12.477Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"produtos\": [\n    {\"_id\": \"64040e4cf73ed3c7131cb305\", \"quantidade\": 4}\n    ],\n    \"precoTotal\": 150.5\n}",
+                "raw": "{\n  \"produtos\": [\n    {\"_id\": \"64040e4cf73ed3c7131cb305\", \"quantidade\": 4}\n    ],\n    \"precoTotal\": 150.5,\n    \"frete\": 10\n}",
                 "form": []
             },
             "auth": {
@@ -570,12 +578,12 @@
             "method": "POST",
             "sortNum": 320000,
             "created": "2023-03-08T03:41:22.999Z",
-            "modified": "2023-03-08T03:45:08.324Z",
+            "modified": "2023-03-13T02:52:05.094Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"_id\": \"64040e4cf73ed3c7131cb305\"\n}",
+                "raw": "{\n  \"_id\": \"64096fb1a5618c827df61a35\"\n}",
                 "form": []
             },
             "auth": {
@@ -630,11 +638,11 @@
             "colId": "d131af5c-0fa8-42ee-981c-eab5ae53e19b",
             "containerId": "55ec0b11-734a-46f9-b7d6-bad5d7fc494f",
             "name": "findById",
-            "url": "{{BaseURL}}{{Port}}/pedido/find/",
+            "url": "{{BaseURL}}{{Port}}/pedido/find/6408e01e658ad1104fad0029",
             "method": "GET",
             "sortNum": 350000,
             "created": "2023-03-08T04:50:11.787Z",
-            "modified": "2023-03-08T04:52:58.121Z",
+            "modified": "2023-03-13T03:25:22.656Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -671,11 +679,11 @@
             "colId": "d131af5c-0fa8-42ee-981c-eab5ae53e19b",
             "containerId": "55ec0b11-734a-46f9-b7d6-bad5d7fc494f",
             "name": "delete",
-            "url": "{{BaseURL}}{{Port}}/pedido/delete/",
+            "url": "{{BaseURL}}{{Port}}/pedido/delete/6408e01e658ad1104fad0029",
             "method": "DELETE",
             "sortNum": 370000,
             "created": "2023-03-08T04:50:24.506Z",
-            "modified": "2023-03-08T04:54:29.630Z",
+            "modified": "2023-03-13T03:25:46.942Z",
             "headers": [],
             "params": [],
             "auth": {
