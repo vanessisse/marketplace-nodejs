@@ -29,6 +29,7 @@ const addCategoriaProdutoService = (id, categoria) => {
             $push: {
                 categorias: {
                     _id: categoria._id,
+                    createdAt: categoria.createdAt
                 },
             },
         },
