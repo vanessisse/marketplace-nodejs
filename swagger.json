@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Marketplace",
+        "description": "API de martketplace com CRUD completo.",
+        "contact": {
+            "name": "Developer",
+            "email": "email@email.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "API de teste local"
+        },
+        {
+            "url": "",
+            "description": "API de produção"
+        }
+    ],
+    "paths": {
+        "/usuario/findAll": {
+            "get": {
+                "summary": "Lista todos os usuários da API",
+                "description": "Rota responsável por listar todos os usuários da API.",
+                "tags": [
+                    "Usuário"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK: a requisição foi bem sucedida e retornou as informações solicitadas."
+                    },
+                    "201": {
+                        "description": "Created: a requisição foi bem sucedida e resultou na criação de um novo recurso."
+                    },
+                    "401": {
+                        "description": "Unauthorized: o token enviado na requisição é inválido ou expirou, e a autenticação é necessária para acessar o recurso solicitado."
+                    },
+                    "404": {
+                        "description": "Not Found: o recurso solicitado não foi encontrado no servidor."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: ocorreu um erro interno no servidor que impediu a conclusão da requisição. "
+                    }
+                }
+            }
+        },
+        "/usuario/find": {
+            "get": {
+                "summary": "Exibe o usuário que corresponde ao ID informado",
+                "description": "Rota responsável por localizar um usuário da API com um ID específico.",
+                "tags": [
+                    "Usuário"
+                ]
+            }
+        }
+    }
+}
