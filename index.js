@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 
 // Conexão com o banco
 const connectToDatabase = require('./src/database/database');
@@ -24,6 +25,12 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors(
+    {
+        origin: 'localhost:3001',
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+    }
+));
 
 // Conectando com o banco
 connectToDatabase();
