@@ -130,7 +130,7 @@ const addUserFavProductController = async (req, res) => {
 
 const removeUserFavProductController = async (req, res) => {
     try {
-        res.status(201).send(await userService.removeUserFavProductService(req.params.id, req.body));
+        res.status(200).send(await userService.removeUserFavProductService(req.params.id, req.body));
     } catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });
