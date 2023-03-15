@@ -31,13 +31,7 @@ const findAllUsersCrontoller = async (req, res) => {
 
 const createUserController = async (req, res) => {
     try {
-        const body = req.body;
-        if (!body.nome) {
-            return res.status(400).send({ message: 'O campo "nome" precisa ser preenchido.' });
-        }
-
-        return res.status(200).send(await userService.createUserService(body));
-
+        return res.status(201).send(await userService.createUserService(body));
     } catch (err) {
         console.log(`Erro: ${err.message}`)
         return res.status(500).send({ message: 'Erro! Tente novamente.' });
