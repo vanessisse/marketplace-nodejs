@@ -27,7 +27,7 @@ const port = 3000;
 app.use(express.json());
 app.use(cors(
     {
-        origin: 'localhost:3001',
+        origin: 'http://localhost:3001',
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
     }
 ));

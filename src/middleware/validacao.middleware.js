@@ -55,7 +55,7 @@ const validaProduto = (req, res, next) => {
         erros.push('nome');
     }
     if (!req.body.descricao) {
-        erros.push('nome');
+        erros.push('descricao');
     }
     if (!req.body.precoUnitario) {
         erros.push('precoUnitario');
